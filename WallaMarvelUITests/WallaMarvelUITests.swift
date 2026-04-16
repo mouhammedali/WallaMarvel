@@ -1,34 +1,136 @@
 import XCTest
 
-class WallaMarvelUITests: XCTestCase {
+final class WallaMarvelUITests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    private var app: XCUIApplication!
 
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+    // The Superhero API returns ~730 heroes in a single JSON (~2MB).
+    // First load can take time depending on network conditions.
+    private let networkTimeout: TimeInterval = 30
+
+    override func setUp() {
+        super.setUp()
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+        app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
+    override func tearDown() {
+        app = nil
+        super.tearDown()
+    }
+
+    // MARK: - Helpers
+
+    /// Waits for heroes to load by looking for the first hero's text.
+    private func waitForHeroesToLoad() {
+        let firstHero = app.staticTexts["A-Bomb"]
+        XCTAssertTrue(
+            firstHero.waitForExistence(timeout: networkTimeout),
+            "Heroes should load from the API within \(Int(networkTimeout))s"
+        )
+    }
+
+    /// Navigates to the first hero's detail screen.
+    private func navigateToFirstHeroDetail() {
+        waitForHeroesToLoad()
+        app.staticTexts["A-Bomb"].firstMatch.tap()
+
+        // Verify navigation occurred — nav bar title changes to the hero name
+        let detailNavBar = app.navigationBars["A-Bomb"]
+        XCTAssertTrue(
+            detailNavBar.waitForExistence(timeout: 10),
+            "Should navigate to A-Bomb detail screen"
+        )
+    }
+
+    // MARK: - Heroes List
+
+    func test_heroesList_showsNavigationTitle() {
+        let title = app.navigationBars["Marvel Heroes"]
+        XCTAssertTrue(title.waitForExistence(timeout: 10))
+    }
+
+    func test_heroesList_showsSearchBar() {
+        let searchField = app.searchFields["Search heroes by name"]
+        XCTAssertTrue(searchField.waitForExistence(timeout: 10))
+    }
+
+    func test_heroesList_displaysHeroes() {
+        waitForHeroesToLoad()
+        XCTAssertTrue(app.staticTexts["A-Bomb"].exists)
+    }
+
+    func test_heroesList_showsPublisherInfo() {
+        waitForHeroesToLoad()
+        XCTAssertTrue(app.staticTexts["Marvel Comics"].exists)
+    }
+
+    // MARK: - Navigation to Detail
+
+    func test_tappingHero_navigatesToDetail() {
+        navigateToFirstHeroDetail()
+    }
+
+    func test_heroDetail_showsPowerStats() {
+        navigateToFirstHeroDetail()
+
+        let powerStats = app.staticTexts["Power Stats"]
+        XCTAssertTrue(powerStats.waitForExistence(timeout: 5))
+    }
+
+    func test_heroDetail_showsStatLabels() {
+        navigateToFirstHeroDetail()
+
+        XCTAssertTrue(app.staticTexts["Intelligence"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Strength"].exists)
+        XCTAssertTrue(app.staticTexts["Speed"].exists)
+    }
+
+    func test_heroDetail_backButtonReturnsToList() {
+        navigateToFirstHeroDetail()
+
+        app.navigationBars.buttons.firstMatch.tap()
+
+        let listTitle = app.navigationBars["Marvel Heroes"]
+        XCTAssertTrue(listTitle.waitForExistence(timeout: 5))
+    }
+
+    // MARK: - Search
+
+    func test_search_filtersHeroesByName() {
+        waitForHeroesToLoad()
+
+        let searchField = app.searchFields["Search heroes by name"]
+        searchField.tap()
+        searchField.typeText("Batman")
+
+        let batman = app.staticTexts["Batman"]
+        XCTAssertTrue(batman.waitForExistence(timeout: 5))
+    }
+
+    func test_search_showsEmptyStateForNoResults() {
+        waitForHeroesToLoad()
+
+        let searchField = app.searchFields["Search heroes by name"]
+        searchField.tap()
+        searchField.typeText("xyznonexistent123")
+
+        let noResults = app.staticTexts["No heroes found"]
+        XCTAssertTrue(noResults.waitForExistence(timeout: 5))
+    }
+
+    // MARK: - Pagination
+
+    func test_scrollingDown_showsMoreHeroes() {
+        waitForHeroesToLoad()
+
+        let list = app.collectionViews.firstMatch
+        for _ in 0..<10 {
+            list.swipeUp()
         }
+
+        sleep(1)
+        XCTAssertFalse(list.cells.allElementsBoundByIndex.isEmpty)
     }
 }

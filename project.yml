@@ -1,0 +1,104 @@
+name: WallaMarvel
+options:
+  bundleIdPrefix: com.wallapop
+  deploymentTarget:
+    iOS: "16.0"
+  xcodeVersion: "16.0"
+  generateEmptyDirectories: true
+  groupSortPosition: top
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "16.0"
+    # Strict concurrency checking for Swift 6 readiness
+    SWIFT_STRICT_CONCURRENCY: targeted
+    # Warn about deprecated APIs
+    CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS: true
+    CLANG_WARN_DOCUMENTATION_COMMENTS: true
+    # Dead code stripping
+    DEAD_CODE_STRIPPING: true
+    # Enable module verification
+    ENABLE_MODULE_VERIFIER: true
+    MODULE_VERIFIER_SUPPORTED_LANGUAGES: "objective-c objective-c++"
+
+packages:
+  Kingfisher:
+    url: https://github.com/onevcat/Kingfisher.git
+    majorVersion: 8.0.0
+
+targets:
+  WallaMarvel:
+    type: application
+    platform: iOS
+    sources:
+      - path: WallaMarvel
+        excludes:
+          - "**/.DS_Store"
+    settings:
+      base:
+        INFOPLIST_FILE: WallaMarvel/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.wallapop.WallaMarvel
+        GENERATE_INFOPLIST_FILE: true
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: true
+        INFOPLIST_KEY_UILaunchScreen_Generation: true
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: 1
+        CODE_SIGN_STYLE: Automatic
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        # Enable testability for unit tests
+        ENABLE_TESTABILITY: true
+      configs:
+        Debug:
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+          SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+          # Enable code coverage in Debug
+          CLANG_ENABLE_CODE_COVERAGE: true
+        Release:
+          SWIFT_COMPILATION_MODE: wholemodule
+          SWIFT_OPTIMIZATION_LEVEL: "-O"
+          # Treat warnings as errors in Release builds
+          SWIFT_TREAT_WARNINGS_AS_ERRORS: true
+    dependencies:
+      - package: Kingfisher
+    preBuildScripts:
+      - name: SwiftLint
+        basedOnDependencyAnalysis: false
+        shell: /bin/sh
+        script: |
+          if command -v swiftlint >/dev/null 2>&1; then
+            swiftlint lint --config "${SRCROOT}/.swiftlint.yml" --quiet
+          else
+            echo "warning: SwiftLint not installed. Install with: brew install swiftlint"
+          fi
+
+  WallaMarvelTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: WallaMarvelTests
+        excludes:
+          - "**/.DS_Store"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.wallapop.WallaMarvelTests
+        GENERATE_INFOPLIST_FILE: true
+    dependencies:
+      - target: WallaMarvel
+
+  WallaMarvelUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: WallaMarvelUITests
+        excludes:
+          - "**/.DS_Store"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.wallapop.WallaMarvelUITests
+        GENERATE_INFOPLIST_FILE: true
+    dependencies:
+      - target: WallaMarvel

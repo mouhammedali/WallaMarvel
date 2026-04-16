@@ -1,0 +1,100 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: SwiftLint
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install SwiftLint
+        run: brew install swiftlint
+      - name: Run SwiftLint
+        run: swiftlint lint --config .swiftlint.yml --strict --reporter github-actions-logging
+
+  build-and-test:
+    name: Build & Test
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode Project
+        run: xcodegen generate
+
+      - name: Resolve simulator destination
+        id: sim
+        run: |
+          # Pick the first available iOS Simulator runtime and create a device
+          RUNTIME=$(xcrun simctl list runtimes available -j | python3 -c "
+          import json, sys
+          runtimes = json.load(sys.stdin)['runtimes']
+          ios = [r for r in runtimes if r['platform'] == 'iOS' and r['isAvailable']]
+          print(ios[-1]['identifier'] if ios else '')
+          ")
+          if [ -z "$RUNTIME" ]; then
+            echo "No iOS Simulator runtime found" && exit 1
+          fi
+          UDID=$(xcrun simctl create "CI-iPhone" "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro" "$RUNTIME")
+          echo "destination=platform=iOS Simulator,id=$UDID" >> "$GITHUB_OUTPUT"
+          echo "Using simulator: $UDID ($RUNTIME)"
+
+      - name: Cache SPM packages
+        uses: actions/cache@v4
+        with:
+          path: ~/Library/Developer/Xcode/DerivedData/**/SourcePackages
+          key: ${{ runner.os }}-spm-${{ hashFiles('project.yml') }}
+          restore-keys: ${{ runner.os }}-spm-
+
+      - name: Build
+        run: |
+          xcodebuild build \
+            -project WallaMarvel.xcodeproj \
+            -scheme WallaMarvel \
+            -destination '${{ steps.sim.outputs.destination }}' \
+            -quiet
+
+      - name: Run Unit Tests
+        run: |
+          xcodebuild test \
+            -project WallaMarvel.xcodeproj \
+            -scheme WallaMarvelTests \
+            -destination '${{ steps.sim.outputs.destination }}' \
+            -resultBundlePath unit-tests.xcresult \
+            -enableCodeCoverage YES
+
+      - name: Run UI Tests
+        run: |
+          xcodebuild test \
+            -project WallaMarvel.xcodeproj \
+            -scheme WallaMarvelUITests \
+            -destination '${{ steps.sim.outputs.destination }}' \
+            -resultBundlePath ui-tests.xcresult
+
+      - name: Upload Unit Test Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: unit-test-results
+          path: unit-tests.xcresult
+          retention-days: 7
+
+      - name: Upload UI Test Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ui-test-results
+          path: ui-tests.xcresult
+          retention-days: 7
