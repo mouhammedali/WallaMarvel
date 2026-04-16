@@ -1,0 +1,30 @@
+{
+  "configurations" : [
+    {
+      "id" : "7B8C9D0E-1F2A-3B4C-5D6E-7F8A9B0C1D2E",
+      "name" : "Record Snapshots",
+      "options" : {
+        "environmentVariableEntries" : [
+          {
+            "key" : "SNAPSHOT_RECORD",
+            "value" : "1"
+          }
+        ],
+        "language" : "en",
+        "region" : "US"
+      }
+    }
+  ],
+  "defaultOptions" : {
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/DesignSystem",
+        "identifier" : "DesignSystemTests",
+        "name" : "DesignSystemTests"
+      }
+    }
+  ],
+  "version" : 1
+}

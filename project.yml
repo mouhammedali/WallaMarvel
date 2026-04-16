@@ -34,6 +34,22 @@ localPackages:
   - Modules/DesignSystem
   - Modules/TestHelpers
 
+schemes:
+  WallaMarvel:
+    build:
+      targets:
+        WallaMarvel: all
+        WallaMarvelTests: [test]
+        WallaMarvelUITests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      testPlans:
+        - path: WallaMarvel.xctestplan
+          defaultPlan: true
+        - path: WallaMarvel-RecordSnapshots.xctestplan
+
 targets:
   WallaMarvel:
     type: application

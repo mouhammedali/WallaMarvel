@@ -1,0 +1,67 @@
+{
+  "configurations" : [
+    {
+      "id" : "6A1B2C3D-4E5F-6A7B-8C9D-0E1F2A3B4C5D",
+      "name" : "Default",
+      "options" : {
+        "language" : "en",
+        "region" : "US"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "gathering" : true
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:WallaMarvel.xcodeproj",
+      "identifier" : "WallaMarvel",
+      "name" : "WallaMarvel"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:WallaMarvel.xcodeproj",
+        "identifier" : "WallaMarvelTests",
+        "name" : "WallaMarvelTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:WallaMarvel.xcodeproj",
+        "identifier" : "WallaMarvelUITests",
+        "name" : "WallaMarvelUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/Networking",
+        "identifier" : "NetworkingTests",
+        "name" : "NetworkingTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/Domain",
+        "identifier" : "DomainTests",
+        "name" : "DomainTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/Data",
+        "identifier" : "DataTests",
+        "name" : "DataTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/DesignSystem",
+        "identifier" : "DesignSystemTests",
+        "name" : "DesignSystemTests"
+      }
+    }
+  ],
+  "version" : 1
+}

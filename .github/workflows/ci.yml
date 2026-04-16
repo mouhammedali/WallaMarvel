@@ -92,35 +92,20 @@ jobs:
             -destination '${{ steps.sim.outputs.destination }}' \
             -quiet
 
-      - name: Run Unit Tests
+      - name: Run All Tests (Unit + Snapshot + UI)
         run: |
           xcodebuild test \
             -project WallaMarvel.xcodeproj \
-            -scheme WallaMarvelTests \
+            -scheme WallaMarvel \
+            -testPlan WallaMarvel \
             -destination '${{ steps.sim.outputs.destination }}' \
-            -resultBundlePath unit-tests.xcresult \
+            -resultBundlePath all-tests.xcresult \
             -enableCodeCoverage YES
 
-      - name: Run UI Tests
-        run: |
-          xcodebuild test \
-            -project WallaMarvel.xcodeproj \
-            -scheme WallaMarvelUITests \
-            -destination '${{ steps.sim.outputs.destination }}' \
-            -resultBundlePath ui-tests.xcresult
-
-      - name: Upload Unit Test Results
+      - name: Upload Test Results
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: unit-test-results
-          path: unit-tests.xcresult
-          retention-days: 7
-
-      - name: Upload UI Test Results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: ui-test-results
-          path: ui-tests.xcresult
+          name: test-results
+          path: all-tests.xcresult
           retention-days: 7

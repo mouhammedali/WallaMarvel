@@ -147,7 +147,16 @@ Three layers of interactive animation enhance the user experience:
 | `test_launch_showsMainScreen` | App launches to the Marvel Heroes screen |
 | `test_launchPerformance` | Measures app launch time |
 
-### Running Tests
+### Test Plan — Run Everything at Once
+
+The project includes a **`WallaMarvel.xctestplan`** that aggregates all test targets into a single invocation — module tests (Networking, Domain, Data, DesignSystem), app unit tests, and UI tests. In Xcode, select the `WallaMarvel` scheme and press `Cmd+U` to run everything. From the command line:
+
+```bash
+# Single invocation — all tests via Xcode Test Plan
+make test-all
+```
+
+### Running Tests Individually
 
 ```bash
 # All module tests (SPM - fast, no simulator needed)
@@ -159,7 +168,7 @@ make test-unit
 # UI tests (requires simulator)
 make test-ui
 
-# Everything
+# Sequential: modules → unit → UI
 make test
 
 # Record snapshot reference images (first run or after intentional UI changes)
@@ -211,6 +220,7 @@ test-modules ──────┘
 ```bash
 make build             # Generate project + build
 make test              # Run all tests (modules + unit + UI)
+make test-all          # Run all tests at once via Xcode Test Plan
 make test-modules      # Run SPM module tests only
 make test-unit         # Run unit tests only
 make test-ui           # Run UI tests only
