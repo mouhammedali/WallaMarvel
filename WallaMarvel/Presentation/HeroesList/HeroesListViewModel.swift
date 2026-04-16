@@ -1,5 +1,7 @@
 import Foundation
 import Combine
+import Domain
+import Networking
 
 /// Drives the heroes list screen. Manages loading, pagination, and debounced search.
 /// Marked @MainActor because all @Published state mutations must happen on the main thread.

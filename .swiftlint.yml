@@ -4,11 +4,14 @@ included:
   - WallaMarvel
   - WallaMarvelTests
   - WallaMarvelUITests
+  - Modules
 
 excluded:
   - WallaMarvel.xcodeproj
   - DerivedData
   - .build
+  - Modules/*/.build
+  - Modules/*/Tests/*/__Snapshots__
 
 # Rules
 disabled_rules:

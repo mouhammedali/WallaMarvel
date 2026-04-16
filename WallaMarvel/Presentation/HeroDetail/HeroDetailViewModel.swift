@@ -1,4 +1,6 @@
 import Foundation
+import Domain
+import Networking
 
 @MainActor
 final class HeroDetailViewModel: ObservableObject {

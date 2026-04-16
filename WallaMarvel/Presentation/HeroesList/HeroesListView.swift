@@ -1,4 +1,6 @@
 import SwiftUI
+import Domain
+import DesignSystem
 
 struct HeroesListView: View {
     @StateObject private var viewModel: HeroesListViewModel
@@ -24,7 +26,7 @@ struct HeroesListView: View {
         }
         .navigationTitle("Marvel Heroes")
         .searchable(text: $viewModel.searchText, prompt: "Search heroes by name")
-        .onChange(of: viewModel.searchText) { _ in
+        .onChange(of: viewModel.searchText) {
             viewModel.onSearchChanged()
         }
         .task {
@@ -34,12 +36,12 @@ struct HeroesListView: View {
     }
 
     private var loadingView: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: DSSpacing.lg) {
             ProgressView()
                 .scaleEffect(1.2)
             Text("Loading heroes...")
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
+                .font(DSTextStyles.subheadline)
+                .foregroundStyle(DSColors.Text.secondary)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
@@ -63,7 +65,7 @@ struct HeroesListView: View {
                 HStack {
                     Spacer()
                     ProgressView()
-                        .padding(.vertical, 8)
+                        .padding(.vertical, DSSpacing.sm)
                     Spacer()
                 }
                 .listRowSeparator(.hidden)
@@ -80,16 +82,16 @@ struct HeroesListView: View {
     }
 
     private var emptyStateView: some View {
-        VStack(spacing: 12) {
-            Image(systemName: "magnifyingglass")
+        VStack(spacing: DSSpacing.md) {
+            Image(systemName: DSSFIcon.magnifyingGlass)
                 .font(.system(size: 40))
-                .foregroundStyle(.secondary)
+                .foregroundStyle(DSColors.Text.secondary)
             Text("No heroes found")
-                .font(.headline)
+                .font(DSTextStyles.headline)
             if !viewModel.searchText.isEmpty {
                 Text("Try a different search term")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                    .font(DSTextStyles.subheadline)
+                    .foregroundStyle(DSColors.Text.secondary)
             }
         }
         .frame(maxWidth: .infinity, minHeight: 200)

@@ -2,7 +2,7 @@ name: WallaMarvel
 options:
   bundleIdPrefix: com.wallapop
   deploymentTarget:
-    iOS: "16.0"
+    iOS: "17.0"
   xcodeVersion: "16.0"
   generateEmptyDirectories: true
   groupSortPosition: top
@@ -10,7 +10,7 @@ options:
 settings:
   base:
     SWIFT_VERSION: "5.0"
-    IPHONEOS_DEPLOYMENT_TARGET: "16.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
     # Strict concurrency checking for Swift 6 readiness
     SWIFT_STRICT_CONCURRENCY: targeted
     # Warn about deprecated APIs
@@ -26,6 +26,13 @@ packages:
   Kingfisher:
     url: https://github.com/onevcat/Kingfisher.git
     majorVersion: 8.0.0
+
+localPackages:
+  - Modules/Networking
+  - Modules/Domain
+  - Modules/Data
+  - Modules/DesignSystem
+  - Modules/TestHelpers
 
 targets:
   WallaMarvel:
@@ -64,6 +71,10 @@ targets:
           SWIFT_TREAT_WARNINGS_AS_ERRORS: true
     dependencies:
       - package: Kingfisher
+      - package: Networking
+      - package: Domain
+      - package: Data
+      - package: DesignSystem
     preBuildScripts:
       - name: SwiftLint
         basedOnDependencyAnalysis: false
@@ -88,6 +99,9 @@ targets:
         GENERATE_INFOPLIST_FILE: true
     dependencies:
       - target: WallaMarvel
+      - package: TestHelpers
+      - package: Domain
+      - package: Networking
 
   WallaMarvelUITests:
     type: bundle.ui-testing

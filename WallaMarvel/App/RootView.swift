@@ -1,4 +1,6 @@
 import SwiftUI
+import Domain
+import DesignSystem
 
 struct RootView: View {
     let container: DependencyContainer

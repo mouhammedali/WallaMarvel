@@ -22,8 +22,34 @@ jobs:
       - name: Run SwiftLint
         run: swiftlint lint --config .swiftlint.yml --strict --reporter github-actions-logging
 
+  test-modules:
+    name: Test SPM Modules
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache SPM packages
+        uses: actions/cache@v4
+        with:
+          path: Modules/*/.build
+          key: ${{ runner.os }}-spm-modules-${{ hashFiles('**/Package.swift') }}
+          restore-keys: ${{ runner.os }}-spm-modules-
+
+      - name: Test Networking
+        run: cd Modules/Networking && swift test
+
+      - name: Test Domain
+        run: cd Modules/Domain && swift test
+
+      - name: Test Data
+        run: cd Modules/Data && swift test
+
+      - name: Test DesignSystem
+        run: cd Modules/DesignSystem && swift test
+
   build-and-test:
     name: Build & Test
+    needs: [lint, test-modules]
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
@@ -55,7 +81,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/Library/Developer/Xcode/DerivedData/**/SourcePackages
-          key: ${{ runner.os }}-spm-${{ hashFiles('project.yml') }}
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.swift', 'project.yml') }}
           restore-keys: ${{ runner.os }}-spm-
 
       - name: Build

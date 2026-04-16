@@ -7,44 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		015D1D0658F325735893C965 /* SuperheroDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B7106539070C50AE25C56 /* SuperheroDTO.swift */; };
-		03797DAE5E351576C374CBB4 /* HeroMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD8584D190CD2FE8A61F0A /* HeroMapper.swift */; };
 		11FBC5243FE8525166EFBD8D /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD30A3A825326DA8D46459C /* DependencyContainer.swift */; };
+		1F193C4EA66EA52EE2D01743 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 5991E011E6D72EE8DF7628F1 /* Networking */; };
 		2000F7A41861F6517180C424 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9877362C49ACFC2F7B47DE50 /* RootView.swift */; };
-		225F50329DDE651CB6E2A2F4 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AF31D277D6287407874829 /* APIError.swift */; };
 		25BDC5A7B8EEE1DC79530F33 /* HeroesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697B7EB8F1C98CE6037D016 /* HeroesListViewModelTests.swift */; };
-		28DB1AAD14FDB2CACF848559 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13A43920264E5D6F737E763 /* TestData.swift */; };
-		30C98FD2103A6C57BE7CA92F /* HeroRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6C221B06268C15E337E247 /* HeroRepository.swift */; };
+		2CC0F1E6A0B2D533F07A8FD1 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = D4605634C5A8C753A00A39B3 /* Domain */; };
 		3AFC3E74422C6766652CD0C0 /* HeroDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC4DA12047BFE47AB64B43 /* HeroDetailViewModelTests.swift */; };
-		3D2FF8B47CE83CCC0B8DC55B /* PowerStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD58241C9FB28D38B947F1A /* PowerStatsView.swift */; };
-		45801043A4D01FF540B2B76D /* HeroMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8326B8744626F8158DE0C2 /* HeroMapperTests.swift */; };
+		4251A485DCD8B0F6DCD7B22E /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 25DBFC26ABDE5C2937E74FA2 /* Networking */; };
 		520F01D907818FDE756344B2 /* ScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F299A753A1F7BE8A2F00897 /* ScreenshotTests.swift */; };
-		554FBB0E6B5AF2672664A6EE /* MarvelEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F540D8A2491AC41C9626667 /* MarvelEndpointTests.swift */; };
 		5EA002499F9ED9FC4AF1516C /* WallaMarvelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC49EC663FCC364A93C2182C /* WallaMarvelUITests.swift */; };
 		634E5DCE801D4C02945E5DDF /* HeroesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD32A1DE863760852DDBAB96 /* HeroesListViewModel.swift */; };
-		741E5F9EF315A878CCF1AB75 /* SearchHeroesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B77948D2ACADC61B6D350A /* SearchHeroesUseCase.swift */; };
-		74F34B121D33B2ADC7E2290D /* HeroesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3546317CC5F72833C829F2 /* HeroesPage.swift */; };
 		80D6F8F94DFF8610505AA206 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 56EB9EB7062DB56A04D6CADA /* Kingfisher */; };
-		98FEBA4BD4835A5997A14B85 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BDB8FAC70E43ADC8969F5 /* Endpoint.swift */; };
-		9AAF83710E7C5D561F2A5151 /* MockHeroRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F553808768613F645910D9 /* MockHeroRemoteDataSource.swift */; };
+		9B2B114B9BE0203CE3E64113 /* TestHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = EF826518641D55031822A071 /* TestHelpers */; };
 		9E933DDBFE9061AB998CCF9C /* HeroDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B653CF161DFCF8DDBE183457 /* HeroDetailViewModel.swift */; };
-		B26831AAE134BEF1D99BAA4E /* FetchHeroesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEC9199527AF20A029BBDF0 /* FetchHeroesUseCase.swift */; };
 		C0474E2D21012390B965195E /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387499042628FC645D767398 /* ViewModifiers.swift */; };
 		C2823B9BEF0D79FFD7C273C7 /* WallaMarvelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F60B5398C0F9830B7BB32B /* WallaMarvelApp.swift */; };
-		C88EBE37DDF2B71D2F310EFF /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF85982E67A934C092A0866 /* Hero.swift */; };
 		CA59E5ED0DD1A4147370105A /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65B23C14ADF8CD5EBA7FC97 /* HeroDetailView.swift */; };
-		CB106D0021DA43B985054447 /* ErrorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3018EA8F882A78129D260E /* ErrorStateView.swift */; };
-		D110B39500B20394A90232FC /* MockHeroRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C30076B9C4B93D3D605F66 /* MockHeroRepository.swift */; };
-		D25F7090B5451C0954D0F28E /* HeroRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755723839E0E3D5BC4E6C3D /* HeroRepositoryProtocol.swift */; };
-		D784F5BF042A47F46BBFBD70 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230026A1EA4DB7F9B75701B8 /* HTTPClient.swift */; };
+		D3972D24A85B117B29F01453 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 7734C5D8FFC450BA60FA37ED /* Data */; };
 		DCB15F24D362E0EEC02D000F /* HeroesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780C5B8318C1A7451B68CCA9 /* HeroesListView.swift */; };
-		E44878642C64B060743C3619 /* DetailSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071DDEDE82D8E09BF20F68A4 /* DetailSectionView.swift */; };
-		EA46D4A1D0333BC6CA5F466F /* SuperheroEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30741D700F7BF1C9715BE0E0 /* SuperheroEndpoint.swift */; };
-		F063F8E2D33A4F647711863E /* HeroRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDC96A675194A8595FA3D6 /* HeroRowView.swift */; };
-		F1603C8969225BE714291247 /* FetchHeroDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF161F2C3629FA11260AD9F6 /* FetchHeroDetailUseCase.swift */; };
+		EF270ADB3CAD644CFF0400CD /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = EDF6D133E4200260C97C2141 /* DesignSystem */; };
 		F1F6AA22910529BF5340A92E /* WallaMarvelLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC360008F304DA599BD193F4 /* WallaMarvelLaunchTests.swift */; };
-		F4AD1301394D1A9229F6B2A3 /* MarvelRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6DC29AD3136B98BDFF081F /* MarvelRemoteDataSource.swift */; };
-		F8924D0EAA1D5E6D4289C6F6 /* HeroRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E4B94006B1EE6C929E847 /* HeroRepositoryTests.swift */; };
+		F8903D96B191C36BF8738C4A /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 2278E38ABBFCC93108AFE310 /* Domain */; };
 		F9EA4EFD68F680C768A369AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CD25F653BF0E8529953A0F4 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -66,84 +49,74 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		071DDEDE82D8E09BF20F68A4 /* DetailSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSectionView.swift; sourceTree = "<group>"; };
-		07F553808768613F645910D9 /* MockHeroRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHeroRemoteDataSource.swift; sourceTree = "<group>"; };
 		0BD97606B354DE9D63D8A3A3 /* WallaMarvelUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = WallaMarvelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C6C221B06268C15E337E247 /* HeroRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRepository.swift; sourceTree = "<group>"; };
-		0D6DC29AD3136B98BDFF081F /* MarvelRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelRemoteDataSource.swift; sourceTree = "<group>"; };
+		188D9451BCF0323B363AAD15 /* TestHelpers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TestHelpers; path = Modules/TestHelpers; sourceTree = SOURCE_ROOT; };
 		1CABF272C688493C69C59784 /* WallaMarvel.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = WallaMarvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		230026A1EA4DB7F9B75701B8 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		2BEC9199527AF20A029BBDF0 /* FetchHeroesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchHeroesUseCase.swift; sourceTree = "<group>"; };
-		30741D700F7BF1C9715BE0E0 /* SuperheroEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroEndpoint.swift; sourceTree = "<group>"; };
 		3443EBE7CBBC34C7299F000E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		387499042628FC645D767398 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		3CD25F653BF0E8529953A0F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4697B7EB8F1C98CE6037D016 /* HeroesListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListViewModelTests.swift; sourceTree = "<group>"; };
+		46B6CC8E1456A9BBFF40C417 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DesignSystem; path = Modules/DesignSystem; sourceTree = SOURCE_ROOT; };
 		49F60B5398C0F9830B7BB32B /* WallaMarvelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallaMarvelApp.swift; sourceTree = "<group>"; };
 		4F299A753A1F7BE8A2F00897 /* ScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTests.swift; sourceTree = "<group>"; };
-		4F540D8A2491AC41C9626667 /* MarvelEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelEndpointTests.swift; sourceTree = "<group>"; };
 		64EC4DA12047BFE47AB64B43 /* HeroDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewModelTests.swift; sourceTree = "<group>"; };
-		6CBD8584D190CD2FE8A61F0A /* HeroMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMapper.swift; sourceTree = "<group>"; };
 		780C5B8318C1A7451B68CCA9 /* HeroesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListView.swift; sourceTree = "<group>"; };
-		906BDB8FAC70E43ADC8969F5 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		917B7106539070C50AE25C56 /* SuperheroDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroDTO.swift; sourceTree = "<group>"; };
+		7AD4E912C8D59AF9A6294CA0 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Domain; path = Modules/Domain; sourceTree = SOURCE_ROOT; };
 		9877362C49ACFC2F7B47DE50 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		AC49EC663FCC364A93C2182C /* WallaMarvelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallaMarvelUITests.swift; sourceTree = "<group>"; };
-		ACD58241C9FB28D38B947F1A /* PowerStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerStatsView.swift; sourceTree = "<group>"; };
 		AD32A1DE863760852DDBAB96 /* HeroesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListViewModel.swift; sourceTree = "<group>"; };
-		ADF85982E67A934C092A0866 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
-		B13A43920264E5D6F737E763 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
-		B5CDC96A675194A8595FA3D6 /* HeroRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRowView.swift; sourceTree = "<group>"; };
 		B653CF161DFCF8DDBE183457 /* HeroDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewModel.swift; sourceTree = "<group>"; };
-		B755723839E0E3D5BC4E6C3D /* HeroRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRepositoryProtocol.swift; sourceTree = "<group>"; };
-		B80E4B94006B1EE6C929E847 /* HeroRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRepositoryTests.swift; sourceTree = "<group>"; };
-		BC8326B8744626F8158DE0C2 /* HeroMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMapperTests.swift; sourceTree = "<group>"; };
-		BD3018EA8F882A78129D260E /* ErrorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateView.swift; sourceTree = "<group>"; };
-		C5AF31D277D6287407874829 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		C5B77948D2ACADC61B6D350A /* SearchHeroesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeroesUseCase.swift; sourceTree = "<group>"; };
+		D3E176CA880C0B82D19227AD /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Networking; path = Modules/Networking; sourceTree = SOURCE_ROOT; };
+		D5EEB2482F955A12D32CE3EB /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = Modules/Data; sourceTree = SOURCE_ROOT; };
 		D65B23C14ADF8CD5EBA7FC97 /* HeroDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailView.swift; sourceTree = "<group>"; };
 		D807454C74AF6DD68E51897F /* WallaMarvelTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = WallaMarvelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC360008F304DA599BD193F4 /* WallaMarvelLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallaMarvelLaunchTests.swift; sourceTree = "<group>"; };
 		DCD30A3A825326DA8D46459C /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
-		EE3546317CC5F72833C829F2 /* HeroesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesPage.swift; sourceTree = "<group>"; };
-		EF161F2C3629FA11260AD9F6 /* FetchHeroDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchHeroDetailUseCase.swift; sourceTree = "<group>"; };
-		F6C30076B9C4B93D3D605F66 /* MockHeroRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHeroRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		831E976A1CDB184A5B4C6B17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B2B114B9BE0203CE3E64113 /* TestHelpers in Frameworks */,
+				2CC0F1E6A0B2D533F07A8FD1 /* Domain in Frameworks */,
+				4251A485DCD8B0F6DCD7B22E /* Networking in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AC7DF09131065F40F940FAAE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				80D6F8F94DFF8610505AA206 /* Kingfisher in Frameworks */,
+				1F193C4EA66EA52EE2D01743 /* Networking in Frameworks */,
+				F8903D96B191C36BF8738C4A /* Domain in Frameworks */,
+				D3972D24A85B117B29F01453 /* Data in Frameworks */,
+				EF270ADB3CAD644CFF0400CD /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0595B854D9620A387A5C72BB /* Core */ = {
+		00FB6918BA329F317F0BC472 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				7548B5335E76F6C489E05117 /* Network */,
-				6ADC77F1A2582017B975E04D /* SuperheroAPI */,
+				D5EEB2482F955A12D32CE3EB /* Data */,
+				46B6CC8E1456A9BBFF40C417 /* DesignSystem */,
+				7AD4E912C8D59AF9A6294CA0 /* Domain */,
+				D3E176CA880C0B82D19227AD /* Networking */,
+				188D9451BCF0323B363AAD15 /* TestHelpers */,
 			);
-			path = Core;
-			sourceTree = "<group>";
+			name = Packages;
+			sourceTree = SOURCE_ROOT;
 		};
 		05E6DE54B0A2F8B1C4DB014B /* Domain */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		0DD2F90B803C9BB018B8E228 /* DataSources */ = {
-			isa = PBXGroup;
-			children = (
-				0D6DC29AD3136B98BDFF081F /* MarvelRemoteDataSource.swift */,
-			);
-			path = DataSources;
 			sourceTree = "<group>";
 		};
 		188A4429E29796D5A4F32B7A /* Presentation */ = {
@@ -175,33 +148,10 @@
 			path = WallaMarvelUITests;
 			sourceTree = "<group>";
 		};
-		323E9D4632E43259D1E0DE25 /* UseCases */ = {
-			isa = PBXGroup;
-			children = (
-				EF161F2C3629FA11260AD9F6 /* FetchHeroDetailUseCase.swift */,
-				2BEC9199527AF20A029BBDF0 /* FetchHeroesUseCase.swift */,
-				C5B77948D2ACADC61B6D350A /* SearchHeroesUseCase.swift */,
-			);
-			path = UseCases;
-			sourceTree = "<group>";
-		};
-		4B63FDE531D59D2289B47991 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				ADF85982E67A934C092A0866 /* Hero.swift */,
-				EE3546317CC5F72833C829F2 /* HeroesPage.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		552FFE6E9D31C1BBD6CD1D87 /* WallaMarvel */ = {
 			isa = PBXGroup;
 			children = (
 				AC483BD27F99E3944D2C1B78 /* App */,
-				0595B854D9620A387A5C72BB /* Core */,
-				A9AF2C18F821D626F748F2E2 /* Data */,
-				FE31E9EA45344DB26B20F1F1 /* DesignSystem */,
-				64302078DECE6AE764AAF782 /* Domain */,
 				1F3CA62352871EF89FC233DE /* Presentation */,
 				3CD25F653BF0E8529953A0F4 /* Assets.xcassets */,
 				3443EBE7CBBC34C7299F000E /* Info.plist */,
@@ -209,84 +159,15 @@
 			path = WallaMarvel;
 			sourceTree = "<group>";
 		};
-		5BA3416E69929F51B049119A /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				B755723839E0E3D5BC4E6C3D /* HeroRepositoryProtocol.swift */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		6263193959DA97CB64809F71 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				4F540D8A2491AC41C9626667 /* MarvelEndpointTests.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		63E413921B97C0DB61AE9813 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				BC8326B8744626F8158DE0C2 /* HeroMapperTests.swift */,
-				B80E4B94006B1EE6C929E847 /* HeroRepositoryTests.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		64302078DECE6AE764AAF782 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				4B63FDE531D59D2289B47991 /* Models */,
-				5BA3416E69929F51B049119A /* Repositories */,
-				323E9D4632E43259D1E0DE25 /* UseCases */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
 		67CE45C6A9F73E5E84FF196F = {
 			isa = PBXGroup;
 			children = (
+				00FB6918BA329F317F0BC472 /* Packages */,
 				552FFE6E9D31C1BBD6CD1D87 /* WallaMarvel */,
 				DC831049196007FD85CF12A4 /* WallaMarvelTests */,
 				27C9C1CE9721457855C2E502 /* WallaMarvelUITests */,
 				9B699D768D70BF877F09E727 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		6ADC77F1A2582017B975E04D /* SuperheroAPI */ = {
-			isa = PBXGroup;
-			children = (
-				99817C0A95EB1B1C3A83D1AF /* DTOs */,
-				30741D700F7BF1C9715BE0E0 /* SuperheroEndpoint.swift */,
-			);
-			path = SuperheroAPI;
-			sourceTree = "<group>";
-		};
-		6EA11196002E8E0614B0F0C7 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				0C6C221B06268C15E337E247 /* HeroRepository.swift */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		7548B5335E76F6C489E05117 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				C5AF31D277D6287407874829 /* APIError.swift */,
-				906BDB8FAC70E43ADC8969F5 /* Endpoint.swift */,
-				230026A1EA4DB7F9B75701B8 /* HTTPClient.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		99817C0A95EB1B1C3A83D1AF /* DTOs */ = {
-			isa = PBXGroup;
-			children = (
-				917B7106539070C50AE25C56 /* SuperheroDTO.swift */,
-			);
-			path = DTOs;
 			sourceTree = "<group>";
 		};
 		9B699D768D70BF877F09E727 /* Products */ = {
@@ -308,16 +189,6 @@
 			path = HeroDetail;
 			sourceTree = "<group>";
 		};
-		A9AF2C18F821D626F748F2E2 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				0DD2F90B803C9BB018B8E228 /* DataSources */,
-				FA7CA4530699E7B3693989D4 /* Mappers */,
-				6EA11196002E8E0614B0F0C7 /* Repositories */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		AC483BD27F99E3944D2C1B78 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,7 +202,6 @@
 		B25FE09DBD5D96F02872FFB2 /* HeroesList */ = {
 			isa = PBXGroup;
 			children = (
-				E7FE897E0F5050D6DA13A33B /* Components */,
 				780C5B8318C1A7451B68CCA9 /* HeroesListView.swift */,
 				AD32A1DE863760852DDBAB96 /* HeroesListViewModel.swift */,
 			);
@@ -341,57 +211,18 @@
 		BF0BDA5D1AB6C775B2058C44 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				071DDEDE82D8E09BF20F68A4 /* DetailSectionView.swift */,
-				BD3018EA8F882A78129D260E /* ErrorStateView.swift */,
-				ACD58241C9FB28D38B947F1A /* PowerStatsView.swift */,
 				387499042628FC645D767398 /* ViewModifiers.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		C12C3FA05B15BDACDD36CC9A /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-				07F553808768613F645910D9 /* MockHeroRemoteDataSource.swift */,
-				F6C30076B9C4B93D3D605F66 /* MockHeroRepository.swift */,
-				B13A43920264E5D6F737E763 /* TestData.swift */,
-			);
-			path = Mocks;
-			sourceTree = "<group>";
-		};
 		DC831049196007FD85CF12A4 /* WallaMarvelTests */ = {
 			isa = PBXGroup;
 			children = (
-				6263193959DA97CB64809F71 /* Core */,
-				63E413921B97C0DB61AE9813 /* Data */,
 				05E6DE54B0A2F8B1C4DB014B /* Domain */,
-				C12C3FA05B15BDACDD36CC9A /* Mocks */,
 				188A4429E29796D5A4F32B7A /* Presentation */,
 			);
 			path = WallaMarvelTests;
-			sourceTree = "<group>";
-		};
-		E7FE897E0F5050D6DA13A33B /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				B5CDC96A675194A8595FA3D6 /* HeroRowView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		FA7CA4530699E7B3693989D4 /* Mappers */ = {
-			isa = PBXGroup;
-			children = (
-				6CBD8584D190CD2FE8A61F0A /* HeroMapper.swift */,
-			);
-			path = Mappers;
-			sourceTree = "<group>";
-		};
-		FE31E9EA45344DB26B20F1F1 /* DesignSystem */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +233,7 @@
 			buildConfigurationList = E1C60C78513BF0BBE3507616 /* Build configuration list for PBXNativeTarget "WallaMarvelTests" */;
 			buildPhases = (
 				A8CD0F4C75236E20572A6542 /* Sources */,
+				831E976A1CDB184A5B4C6B17 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -409,6 +241,11 @@
 				0317217877A0E0799DDA2185 /* PBXTargetDependency */,
 			);
 			name = WallaMarvelTests;
+			packageProductDependencies = (
+				EF826518641D55031822A071 /* TestHelpers */,
+				D4605634C5A8C753A00A39B3 /* Domain */,
+				25DBFC26ABDE5C2937E74FA2 /* Networking */,
+			);
 			productName = WallaMarvelTests;
 			productReference = D807454C74AF6DD68E51897F /* WallaMarvelTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -429,6 +266,10 @@
 			name = WallaMarvel;
 			packageProductDependencies = (
 				56EB9EB7062DB56A04D6CADA /* Kingfisher */,
+				5991E011E6D72EE8DF7628F1 /* Networking */,
+				2278E38ABBFCC93108AFE310 /* Domain */,
+				7734C5D8FFC450BA60FA37ED /* Data */,
+				EDF6D133E4200260C97C2141 /* DesignSystem */,
 			);
 			productName = WallaMarvel;
 			productReference = 1CABF272C688493C69C59784 /* WallaMarvel.app */;
@@ -536,30 +377,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				225F50329DDE651CB6E2A2F4 /* APIError.swift in Sources */,
 				11FBC5243FE8525166EFBD8D /* DependencyContainer.swift in Sources */,
-				E44878642C64B060743C3619 /* DetailSectionView.swift in Sources */,
-				98FEBA4BD4835A5997A14B85 /* Endpoint.swift in Sources */,
-				CB106D0021DA43B985054447 /* ErrorStateView.swift in Sources */,
-				F1603C8969225BE714291247 /* FetchHeroDetailUseCase.swift in Sources */,
-				B26831AAE134BEF1D99BAA4E /* FetchHeroesUseCase.swift in Sources */,
-				D784F5BF042A47F46BBFBD70 /* HTTPClient.swift in Sources */,
-				C88EBE37DDF2B71D2F310EFF /* Hero.swift in Sources */,
 				CA59E5ED0DD1A4147370105A /* HeroDetailView.swift in Sources */,
 				9E933DDBFE9061AB998CCF9C /* HeroDetailViewModel.swift in Sources */,
-				03797DAE5E351576C374CBB4 /* HeroMapper.swift in Sources */,
-				30C98FD2103A6C57BE7CA92F /* HeroRepository.swift in Sources */,
-				D25F7090B5451C0954D0F28E /* HeroRepositoryProtocol.swift in Sources */,
-				F063F8E2D33A4F647711863E /* HeroRowView.swift in Sources */,
 				DCB15F24D362E0EEC02D000F /* HeroesListView.swift in Sources */,
 				634E5DCE801D4C02945E5DDF /* HeroesListViewModel.swift in Sources */,
-				74F34B121D33B2ADC7E2290D /* HeroesPage.swift in Sources */,
-				F4AD1301394D1A9229F6B2A3 /* MarvelRemoteDataSource.swift in Sources */,
-				3D2FF8B47CE83CCC0B8DC55B /* PowerStatsView.swift in Sources */,
 				2000F7A41861F6517180C424 /* RootView.swift in Sources */,
-				741E5F9EF315A878CCF1AB75 /* SearchHeroesUseCase.swift in Sources */,
-				015D1D0658F325735893C965 /* SuperheroDTO.swift in Sources */,
-				EA46D4A1D0333BC6CA5F466F /* SuperheroEndpoint.swift in Sources */,
 				C0474E2D21012390B965195E /* ViewModifiers.swift in Sources */,
 				C2823B9BEF0D79FFD7C273C7 /* WallaMarvelApp.swift in Sources */,
 			);
@@ -570,13 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AFC3E74422C6766652CD0C0 /* HeroDetailViewModelTests.swift in Sources */,
-				45801043A4D01FF540B2B76D /* HeroMapperTests.swift in Sources */,
-				F8924D0EAA1D5E6D4289C6F6 /* HeroRepositoryTests.swift in Sources */,
 				25BDC5A7B8EEE1DC79530F33 /* HeroesListViewModelTests.swift in Sources */,
-				554FBB0E6B5AF2672664A6EE /* MarvelEndpointTests.swift in Sources */,
-				9AAF83710E7C5D561F2A5151 /* MockHeroRemoteDataSource.swift in Sources */,
-				D110B39500B20394A90232FC /* MockHeroRepository.swift in Sources */,
-				28DB1AAD14FDB2CACF848559 /* TestData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,7 +523,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -789,7 +606,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -902,10 +719,38 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2278E38ABBFCC93108AFE310 /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
+		25DBFC26ABDE5C2937E74FA2 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
 		56EB9EB7062DB56A04D6CADA /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5AF0D8439A1392022BF23608 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		5991E011E6D72EE8DF7628F1 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
+		7734C5D8FFC450BA60FA37ED /* Data */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Data;
+		};
+		D4605634C5A8C753A00A39B3 /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
+		EDF6D133E4200260C97C2141 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
+		};
+		EF826518641D55031822A071 /* TestHelpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TestHelpers;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

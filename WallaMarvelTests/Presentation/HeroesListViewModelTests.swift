@@ -1,4 +1,7 @@
 import XCTest
+import Domain
+import Networking
+import TestHelpers
 @testable import WallaMarvel
 
 @MainActor

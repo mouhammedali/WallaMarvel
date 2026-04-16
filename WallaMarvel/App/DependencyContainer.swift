@@ -1,9 +1,18 @@
 import Foundation
+import SwiftData
+import Networking
+import Domain
+import Data
 
 /// Composition root — wires all dependencies using constructor injection.
 /// Lazy properties ensure each dependency is created once and shared across
 /// the object graph. No third-party DI framework needed for this scale.
 final class DependencyContainer {
+    private let modelContainer: ModelContainer
+
+    init(modelContainer: ModelContainer) {
+        self.modelContainer = modelContainer
+    }
 
     // MARK: - Core
 
@@ -15,8 +24,12 @@ final class DependencyContainer {
         SuperheroRemoteDataSource(httpClient: httpClient)
     }()
 
+    private lazy var localDataSource: HeroLocalDataSourceProtocol = {
+        SwiftDataHeroLocalDataSource(modelContainer: modelContainer)
+    }()
+
     private lazy var heroRepository: HeroRepositoryProtocol = {
-        HeroRepository(remoteDataSource: remoteDataSource)
+        HeroRepository(remoteDataSource: remoteDataSource, localDataSource: localDataSource)
     }()
 
     // MARK: - ViewModels
